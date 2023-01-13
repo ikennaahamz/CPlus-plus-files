@@ -50,3 +50,34 @@ int main() {
     cout << "Minimum element =" << min;
 */
 
+
+
+#include <iostream>
+#include <cstdlib> // for rand() and srand()
+#include <ctime> // for time()
+
+using namespace std;
+
+int main()
+{
+    int A[20];
+
+    // Seed the random number generator
+    srand(time(0));
+
+    // Fill the array with random numbers between -150 and 150
+    for (int i = 0; i < 20; i++) {
+        A[i] = (rand() % 300) - 150;
+    }
+
+    cout << "Even and negative numbers in the array: " << endl;
+    for (int i = 0; i < 20; i++) {
+        if (A[i] < 0 && A[i] % 2 == 0) {
+            cout << A[i] << " ";
+        }
+    }
+
+    return 0;
+}
+
+
